@@ -2,8 +2,6 @@
 
 The `flask_filters` module helps you wrap [Flask][] views with coroutine filters.  The bundled `hello_world.py` application demonstrates most of this module's functionality.
 
-[Flask]: http://flask.pocoo.org/ (Flask is a web development microframework for Python)
-
 
 ## Installation
 
@@ -26,8 +24,7 @@ Otherwise, install Flask, then clone this git repository and install from `setup
 * Python 2.5+ (primarily tested with Python 2.7, not compatible with Python 3)
 * [Flask][]
 * The bundled Hello World app uses Flask's jsonify method, which relies on [simplejson][] for Python 2.5. (`simplejson` was added to the standard library as the `json` module in Python 2.6.)
-
-[simplejson]: http://pypi.python.org/pypi/simplejson (simplejson is a fast and extensible JSON encoder/decoder for Python)
+* The bundled unit tests require Python 2.6+ and [nose][]
 
 
 ## Defining Filters
@@ -125,3 +122,13 @@ If you are using Flask's blueprints, you can provide a blueprint anywhere this m
 
 
 ## Development
+
+To run the unit tests, you'll need the [nose][] package.  Once that's installed, you can run the tests with:
+
+    nosetests
+
+
+[Flask]: http://flask.pocoo.org/
+[nose]: https://nose.readthedocs.org/
+[simplejson]: http://pypi.python.org/pypi/simplejson
+[virtualenv]: http://www.virtualenv.org/
