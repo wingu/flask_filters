@@ -21,10 +21,9 @@ Otherwise, install Flask, then clone this git repository and install from `setup
 
 ### Dependencies
 
-* Python 2.5+ (primarily tested with Python 2.7, not compatible with Python 3)
+* Python 2.6+ (primarily tested with Python 2.7, minimally tested with Python 2.6 and 3.4)
 * [Flask][]
-* The bundled Hello World app uses Flask's jsonify method, which relies on [simplejson][] for Python 2.5. (`simplejson` was added to the standard library as the `json` module in Python 2.6.)
-* The bundled unit tests require Python 2.6+ and [nose][]
+* The bundled unit tests require [nose][]
 
 
 ## Defining Filters
