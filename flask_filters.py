@@ -82,7 +82,7 @@ def make_view_decorator(flask_app, base_url, *filters):
     The returned decorator function takes a path (relative to `base_url`) and
     one or more HTTP methods (GET, POST, etc.).
 
-    You can also provide a list of additional filters to run for only the 
+    You can also provide a list of additional filters to run for only the
     decorated function.  Those filters will run "outside" the filters listed
     in the call to make_view_decorator -- that is, view-specific filters will
     be the first filters to run before the view function and the last filters
@@ -93,7 +93,8 @@ def make_view_decorator(flask_app, base_url, *filters):
         Decorator to register a view function for a URL route.
 
         The only valid keyword argument is 'filters', which must be an iterable
-        of filters that should be prepended to the 
+        of filters that should be prepended to the decorator's original filters
+        list.
         """
         if options and options.keys() != ['filters']:
             extra_kwargs_set = set(options.keys()) - set(['filters'])
