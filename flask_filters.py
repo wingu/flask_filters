@@ -96,7 +96,7 @@ def make_view_decorator(flask_app, base_url, *filters):
         of filters that should be prepended to the decorator's original filters
         list.
         """
-        if options and options.keys() != ['filters']:
+        if options and set(options.keys()) != set(['filters']):
             extra_kwargs_set = set(options.keys()) - set(['filters'])
             extra_kwargs = ', '.join(extra_kwargs_set)
             raise TypeError('unexpected keyword argument(s): %s' % extra_kwargs)
@@ -221,7 +221,7 @@ def combine_decorators(decorators):
     def some_function():
         pass
     """
-    return reduce(_compose_decorators, reversed(decorators))
+    return functools.reduce(_compose_decorators, reversed(decorators))
 
 
 def _compose_decorators(inner, outer):
